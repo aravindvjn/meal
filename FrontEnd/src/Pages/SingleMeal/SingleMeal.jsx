@@ -37,9 +37,9 @@ const SingleMeal = () => {
             <Fetching class1="w-1/3 h-2 rounded-sm" />
           </div>
           <Fetching class1="mt-5 h-2 rounded-sm" />
-          <Fetching class1="mt-2 h-32 rounded-sm" />
+          <Fetching class1="mt-2 h-44 rounded-sm" />
           <Fetching class1="mt-2 h-2 rounded-sm" />
-          <Fetching class1="mt-2 h-24 rounded-sm" />
+          <Fetching class1="mt-2 h-44 rounded-sm" />
         </div>
       )}
     </div>

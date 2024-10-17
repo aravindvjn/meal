@@ -32,8 +32,7 @@ const SingleCategory = () => {
       ) : (
         <div className="px-5 sm:px-10 lg:px-20 pt-5 min-h-screen pb-20">
           <div className="grid grid-cols-2 gap-5 ">
-            {" "}
-            {Array(8)
+            {Array(10)
               .fill()
               .map((_, index) => (
                 <Fetching key={index} class1="h-32" />

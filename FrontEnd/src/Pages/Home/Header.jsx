@@ -14,7 +14,7 @@ const Header = () => {
             <button className="rounded-full bg-white w-6">O</button>
           </div>
         </div>
-        <div className="w-full px-3 relative">
+        <div className="w-full px-4 relative">
           <Search />
         </div>
         <div className="w-screen pb-10"></div>

@@ -24,7 +24,7 @@ const ForYou = () => {
   }, []);
   return (
     <div className="sm:px-10 lg:px-20 mt-3 px-5">
-      <h1 className="font-bold mb-2">For You</h1>
+      <h1 className="font-bold">For You</h1>
       <div className="flex overflow-x-scroll rounded-lg  scroll-smooth sm:scrollbar-hide sm:gap-5 gap-2 py-3 overflow-hidden">
         {byCounrty.length >0 ?
           byCounrty.map((item) => {

@@ -46,7 +46,7 @@ const RandomDish = () => {
         </>
       ) : (
         <>
-          <Fetching class1="h-3 rounded-md w-1/2 mt-3" />
+          <Fetching class1="h-5 rounded-md w-1/2 mt-3" />
           <Fetching class1="mt-3 rounded-lg overflow-hidden h-32 shadow-sm " />
         </>
       )}
