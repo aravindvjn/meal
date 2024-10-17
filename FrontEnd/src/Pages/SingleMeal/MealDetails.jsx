@@ -3,7 +3,30 @@ import FavoriteIcon from "@mui/icons-material/Favorite";
 import FavoriteBorderOutlinedIcon from "@mui/icons-material/FavoriteBorderOutlined";
 const MealDetails = ({ details }) => {
   const [fav, setFav] = useState(false);
-  console.log(details);
+  const favHandler=() => {
+    const array = JSON.parse(localStorage.getItem("favourites"));
+    if (localStorage.getItem("favourites")) {
+      const check = array.filter((item) => {
+        return item === details.idMeal;
+      });
+      if (check.length > 0) {
+        const what = array.filter((item) => item !== details.idMeal)
+        const newArray = JSON.stringify(
+          array.filter((item) => item !== details.idMeal)
+        );
+        localStorage.setItem("favourites", newArray);
+        setFav(false);
+      } else {
+        const newArray = JSON.stringify([...array, details.idMeal]);
+        localStorage.setItem("favourites", newArray);
+        setFav(true);
+      }
+    } else {
+      const newArray = JSON.stringify([details.idMeal]);
+      localStorage.setItem("favourites", newArray);
+      setFav(true);
+    }
+  }
   useEffect(() => {
     const fetchLocalStorage = () => {
       if (localStorage.getItem("favourites")) {
@@ -29,38 +52,13 @@ const MealDetails = ({ details }) => {
       </div>
       {fav ? (
         <FavoriteIcon
-          onClick={() => setFav(!fav)}
+          onClick={favHandler}
           className="text-pink-500 cursor-pointer"
         />
       ) : (
         <FavoriteBorderOutlinedIcon
           className="cursor-pointer"
-          onClick={() => {
-            const array = JSON.parse(localStorage.getItem("favourites"));
-            if (localStorage.getItem("favourites")) {
-              const check = array.filter((item) => {
-                return item === details.idMeal;
-              });
-              console.log("check",check)
-              if (check.length > 0) {
-                const what = array.filter((item) => item !== idMeal)
-                console.log("local",what)
-                const newArray = JSON.stringify(
-                  array.filter((item) => item !== idMeal)
-                );
-                localStorage.setItem("favourites", newArray);
-                setFav(false);
-              } else {
-                const newArray = JSON.stringify([...array, details.idMeal]);
-                localStorage.setItem("favourites", newArray);
-                setFav(true);
-              }
-            } else {
-              const newArray = JSON.stringify([details.idMeal]);
-              localStorage.setItem("favourites", newArray);
-              setFav(true);
-            }
-          }}
+          onClick={favHandler}
         />
       )}
       <div className="text-sm mt-3">
