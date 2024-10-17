@@ -7,7 +7,7 @@ const Header = ({title}) => {
     <div className="bg-red-900 h-12 flex items-center relative">
       <ArrowBackOutlinedIcon
         onClick={() => navigate("/")}
-        className="text-white m-3"
+        className="text-white m-3 cursor-pointer"
       />
       <h1 className="font-bold  text-white absolute left-1/2 -translate-x-1/2">{title}</h1>
     </div>

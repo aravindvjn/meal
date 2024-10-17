@@ -3,6 +3,23 @@ import FavoriteIcon from "@mui/icons-material/Favorite";
 import FavoriteBorderOutlinedIcon from "@mui/icons-material/FavoriteBorderOutlined";
 const MealDetails = ({ details }) => {
   const [fav, setFav] = useState(false);
+  console.log(details);
+  useEffect(() => {
+    const fetchLocalStorage = () => {
+      if (localStorage.getItem("favourites")) {
+        const array = JSON.parse(localStorage.getItem("favourites"));
+        const check = array.filter((item) => {
+          return item === details.idMeal;
+        });
+        if (check.length > 0) {
+          setFav(true);
+        } else {
+          setFav(false);
+        }
+      }
+    };
+    fetchLocalStorage();
+  }, [fav]);
   return (
     <div className="px-5 sm:px-10 lg:px-20 pt-5 min-h-screen pb-20">
       <div className="text-center flex flex-col  items-center">
@@ -10,8 +27,42 @@ const MealDetails = ({ details }) => {
         <h1 className="font-bold">{details.strMeal}</h1>
         <h1 className="font-light text-sm italic">{details.strCategory}</h1>
       </div>
-      {fav ? <FavoriteIcon onClick={()=>setFav(!fav)} className="text-pink-500 cursor-pointer" /> : <FavoriteBorderOutlinedIcon className="cursor-pointer" onClick={()=>setFav(!fav)}/>
-      }
+      {fav ? (
+        <FavoriteIcon
+          onClick={() => setFav(!fav)}
+          className="text-pink-500 cursor-pointer"
+        />
+      ) : (
+        <FavoriteBorderOutlinedIcon
+          className="cursor-pointer"
+          onClick={() => {
+            const array = JSON.parse(localStorage.getItem("favourites"));
+            if (localStorage.getItem("favourites")) {
+              const check = array.filter((item) => {
+                return item === details.idMeal;
+              });
+              console.log("check",check)
+              if (check.length > 0) {
+                const what = array.filter((item) => item !== idMeal)
+                console.log("local",what)
+                const newArray = JSON.stringify(
+                  array.filter((item) => item !== idMeal)
+                );
+                localStorage.setItem("favourites", newArray);
+                setFav(false);
+              } else {
+                const newArray = JSON.stringify([...array, details.idMeal]);
+                localStorage.setItem("favourites", newArray);
+                setFav(true);
+              }
+            } else {
+              const newArray = JSON.stringify([details.idMeal]);
+              localStorage.setItem("favourites", newArray);
+              setFav(true);
+            }
+          }}
+        />
+      )}
       <div className="text-sm mt-3">
         <h1 className="font-bold text-lg pb-2 opacity-60">Ingredients</h1>
         <table>

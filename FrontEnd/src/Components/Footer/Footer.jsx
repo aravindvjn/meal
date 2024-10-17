@@ -1,6 +1,7 @@
 import React from "react";
 import HomeIcon from "@mui/icons-material/Home";
 import FavoriteIcon from "@mui/icons-material/Favorite";
+import InfoIcon from '@mui/icons-material/Info';
 import AccountCircleIcon from "@mui/icons-material/AccountCircle";
 import { useLocation, useNavigate } from "react-router-dom";
 const Footer = () => {
@@ -22,11 +23,11 @@ const Footer = () => {
             navigate('/favourites')
         }}
       />
-      <AccountCircleIcon
+      <InfoIcon
         className={`cursor-pointer ${
-          location.pathname === "/account" ? "opacity-65" : ""
+          location.pathname === "/info" ? "opacity-65" : ""
         }`}  onClick={()=>{
-            navigate('/account')
+            navigate('/info')
         }}
       />
     </div>

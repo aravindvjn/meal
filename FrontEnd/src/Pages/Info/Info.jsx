@@ -1,6 +1,6 @@
 import React from 'react'
 
-const Account = () => {
+const Info = () => {
   return (
     <div className="bg-orange-50 min-h-screen">
       
@@ -8,4 +8,4 @@ const Account = () => {
   )
 }
 
-export default Account
+export default Info

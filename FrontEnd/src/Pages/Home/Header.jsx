@@ -1,17 +1,15 @@
 import React from 'react'
 import HomeIcon from "@mui/icons-material/Home";
 import Search from '../../Components/Search/Search';
+import AccountCircleIcon from "@mui/icons-material/AccountCircle";
+
 const Header = () => {
   return (
-    <div className="bg-gradient-to-l from-orange-600 to-orange-700 rounded-b-2xl w-full shadow-sm">
-        <div className="flex justify-between p-5">
+    <div className="sm:pl-10 lg:px-20 bg-gradient-to-l from-orange-600 to-orange-700 rounded-b-2xl w-full shadow-sm">
+        <div className=" flex justify-between p-5">
           <div>
-            <HomeIcon className="text-black pb-0.5" fontSize="small" />
-            <h1 className="inline font-bold">Home</h1>
-          </div>
-          <div className="flex gap-2">
-            <button className="rounded-full bg-white w-14">One</button>
-            <button className="rounded-full bg-white w-6">O</button>
+            <HomeIcon className="text-white pb-1" fontSize="small" />
+            <h1 className="inline text-white font-bold">Home</h1>
           </div>
         </div>
         <div className="w-full px-4 relative">

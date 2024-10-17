@@ -28,11 +28,11 @@ const Search = () => {
       onSubmit={(e) => {
         e.preventDefault();
         searchHandler();
-      }}
+      }} className="sm:w-2/3 lg:m-auto lg:w-1/2 relative"
     >
       <input
         type="text"
-        className="w-full h-10 rounded-lg px-4 shadow-md"
+        className="w-full  h-10 rounded-lg px-4 shadow-md"
         placeholder="Search.."
         value={input}
         onChange={(e) => {
