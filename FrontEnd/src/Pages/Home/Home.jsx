@@ -5,7 +5,7 @@ import ForYou from "./ForYou";
 import RandomDish from "./RandomDish";
 const Home = () => {
   return (
-    <div style={{ backgroundColor: "#FAF9F6", minHeight: "100vh" }}>
+    <div className="min-h-screen bg-orange-50">
       <Header />
       <RandomDish />
       <ForYou />
