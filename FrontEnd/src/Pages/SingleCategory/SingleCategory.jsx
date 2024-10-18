@@ -31,11 +31,11 @@ const SingleCategory = () => {
         <MealCatgory meals={catagoryMeals} />
       ) : (
         <div className="px-5 sm:px-10 lg:px-20 pt-5 min-h-screen pb-20">
-          <div className="grid grid-cols-2 gap-5 ">
+          <div className="grid grid-cols-2 sm:grid-cols-3 gap-5 lg:grid-cols-4 sm:gap-7 lg:gap-10 ">
             {Array(10)
               .fill()
               .map((_, index) => (
-                <Fetching key={index} class1="h-32" />
+                <Fetching key={index} class1="h-44 lg:h-64" />
               ))}
           </div>
         </div>

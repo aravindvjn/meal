@@ -10,7 +10,6 @@ const MealDetails = ({ details }) => {
         return item === details.idMeal;
       });
       if (check.length > 0) {
-        const what = array.filter((item) => item !== details.idMeal)
         const newArray = JSON.stringify(
           array.filter((item) => item !== details.idMeal)
         );
@@ -46,7 +45,7 @@ const MealDetails = ({ details }) => {
   return (
     <div className="px-5 sm:px-10 lg:px-20 pt-5 min-h-screen pb-20">
       <div className="text-center flex flex-col  items-center">
-        <img src={details.strMealThumb} alt="" className="w-2/3 rounded-xl" />
+        <img src={details.strMealThumb} alt="" className="w-2/3 sm:w-2/5 lg:w-1/3 rounded-xl" />
         <h1 className="font-bold">{details.strMeal}</h1>
         <h1 className="font-light text-sm italic">{details.strCategory}</h1>
       </div>
