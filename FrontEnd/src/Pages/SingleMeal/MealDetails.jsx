@@ -3,7 +3,7 @@ import FavoriteIcon from "@mui/icons-material/Favorite";
 import FavoriteBorderOutlinedIcon from "@mui/icons-material/FavoriteBorderOutlined";
 const MealDetails = ({ details }) => {
   const [fav, setFav] = useState(false);
-  const favHandler=() => {
+  const favHandler = () => {
     const array = JSON.parse(localStorage.getItem("favourites"));
     if (localStorage.getItem("favourites")) {
       const check = array.filter((item) => {
@@ -25,7 +25,7 @@ const MealDetails = ({ details }) => {
       localStorage.setItem("favourites", newArray);
       setFav(true);
     }
-  }
+  };
   useEffect(() => {
     const fetchLocalStorage = () => {
       if (localStorage.getItem("favourites")) {
@@ -42,10 +42,17 @@ const MealDetails = ({ details }) => {
     };
     fetchLocalStorage();
   }, [fav]);
+  if (!details.length >0) {
+    return;
+  }
   return (
     <div className="px-5 sm:px-10 lg:px-20 pt-5 min-h-screen pb-20">
       <div className="text-center flex flex-col  items-center">
-        <img src={details.strMealThumb} alt="" className="w-2/3 sm:w-2/5 lg:w-1/3 rounded-xl" />
+        <img
+          src={details.strMealThumb}
+          alt=""
+          className="w-2/3 sm:w-2/5 lg:w-1/3 rounded-xl"
+        />
         <h1 className="font-bold">{details.strMeal}</h1>
         <h1 className="font-light text-sm italic">{details.strCategory}</h1>
       </div>
