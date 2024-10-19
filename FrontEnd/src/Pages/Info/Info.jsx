@@ -3,9 +3,9 @@ import Header from "../SingleMeal/Header";
 
 const Info = () => {
   return (
-    <div className="bg-orange-50 min-h-screen">
+    <div  className="bg-orange-50 min-h-screen">
       <Header title={"Info"} />
-      <div className="px-5 sm:px-10 lg:px-20 pt-5 min-h-screen pb-20 text-center text-sm sm:text-lg">
+      <div data-aos="zoom-in" className=" px-5 sm:px-10 lg:px-20 pt-5 min-h-screen pb-20 text-center text-sm sm:text-lg">
         <h1 className="font-bold">Welcome to Our Recipe App!</h1>
         <p>
           Discover a world of culinary delights with our Recipe App, powered by

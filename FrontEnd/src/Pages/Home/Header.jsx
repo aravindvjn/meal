@@ -5,7 +5,7 @@ import AccountCircleIcon from "@mui/icons-material/AccountCircle";
 
 const Header = () => {
   return (
-    <div className="sm:pl-10 lg:px-20 bg-gradient-to-l from-orange-600 to-orange-700 rounded-b-2xl w-full shadow-sm">
+    <div data-aos="zoom-out" className="sm:pl-10 lg:px-20 bg-gradient-to-l from-orange-600 to-orange-700 rounded-b-2xl w-full shadow-sm">
         <div className=" flex justify-between p-5">
           <div>
             <HomeIcon className="text-white pb-1" fontSize="small" />

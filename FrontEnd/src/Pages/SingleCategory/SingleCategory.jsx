@@ -25,7 +25,7 @@ const SingleCategory = () => {
     fetchMealsByCategory();
   }, []);
   return (
-    <div className="bg-orange-50 min-h-screen">
+    <div  className="bg-orange-50 min-h-screen">
       <Header title={location.pathname.split("/").pop()} />
       {catagoryMeals.length > 0 ? (
         <MealCatgory meals={catagoryMeals} />

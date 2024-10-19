@@ -9,7 +9,7 @@ const MealCatgory = ({ meals }) => {
         {meals.length > 0 &&
           meals.map((meal) => {
             return (
-              <div key={meal.idMeal} className="flex  items-center flex-col bg-white pb-3 text-center rounded-lg shadow-md h-44 lg:h-64" onClick={() => {
+              <div data-aos="flip-right" key={meal.idMeal} className="flex  items-center flex-col bg-white pb-3 text-center rounded-lg shadow-md h-44 lg:h-64" onClick={() => {
                 navigate("/single-meal/" + meal.idMeal);
                 window.scrollTo(0, 0);
               }}>

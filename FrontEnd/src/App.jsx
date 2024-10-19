@@ -7,6 +7,9 @@ import SingleMeal from "./Pages/SingleMeal/SingleMeal";
 import SingleCategory from "./Pages/SingleCategory/SingleCategory";
 import SearchResult from "./Pages/SearchResult/SearchResult";
 import Info from "./Pages/Info/Info";
+import 'aos/dist/aos.css'; 
+import AOS from 'aos';
+AOS.init();
 function App() {
   return (
     <BrowserRouter>

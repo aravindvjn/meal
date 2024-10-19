@@ -25,7 +25,7 @@ const Search = () => {
     }
   };
   return (
-    <form
+    <form data-aos="zoom-out"
       onSubmit={(e) => {
         e.preventDefault();
         searchHandler();
