@@ -40,6 +40,7 @@ const RandomDish = () => {
               className="w-full h-32 object-cover opacity-55"
               onClick={() => {
                 navigate("/single-meal/" + random.idMeal);
+                window.scrollTo(0, 0);
               }}
             />
           </div>

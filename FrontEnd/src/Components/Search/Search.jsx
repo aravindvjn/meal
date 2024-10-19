@@ -15,6 +15,7 @@ const Search = () => {
           navigate("/search-result", {
             state: data ? data.meals : "",
           });
+          window.scrollTo(0, 0)
         } else {
           console.log("Failed");
         }

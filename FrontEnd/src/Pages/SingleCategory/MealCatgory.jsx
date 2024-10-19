@@ -11,6 +11,7 @@ const MealCatgory = ({ meals }) => {
             return (
               <div key={meal.idMeal} className="flex  items-center flex-col bg-white pb-3 text-center rounded-lg shadow-md h-44 lg:h-64" onClick={() => {
                 navigate("/single-meal/" + meal.idMeal);
+                window.scrollTo(0, 0);
               }}>
                 <div className="h-32 lg:h-52 overflow-hidden">
                   <img
