@@ -29,7 +29,7 @@ const Scroll = () => {
         {category.length > 0
           ? category.map((cate) => {
               return (
-                <div 
+                <div data-aos="fade-in" 
                   key={cate.idCategory}
                   onClick={() =>
                     navigate("/single-category/" + cate.strCategory)

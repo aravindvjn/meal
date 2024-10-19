@@ -23,7 +23,7 @@ const RandomDish = () => {
     fetchRandom();
   }, []);
   return (
-    <div className="px-5 sm:px-10 lg:px-20">
+    <div data-aos='fade-in' className="px-5 sm:px-10 lg:px-20">
       {random ? (
         <>
           <h1 className="font-bold mt-3">

@@ -29,7 +29,7 @@ const ForYou = () => {
         {byCounrty.length >0 ?
           byCounrty.map((item) => {
             return (
-              <div
+              <div data-aos="fade-in"
                 key={item.idMeal}
                 onClick={() => {
                   navigate("/single-meal/" + item.idMeal);
