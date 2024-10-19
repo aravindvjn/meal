@@ -7,7 +7,7 @@ import Fetching from "../../Components/FetchingComponent/Fetching";
 
 const SingleMeal = () => {
   const location = useLocation();
-  const [mealDetails, setMealDetails] = useState({});
+  const [mealDetails, setMealDetails] = useState();
   useEffect(() => {
     const fetchDetailsByID = async () => {
       try {

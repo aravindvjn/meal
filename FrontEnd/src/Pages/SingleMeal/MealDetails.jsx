@@ -3,25 +3,26 @@ import FavoriteIcon from "@mui/icons-material/Favorite";
 import FavoriteBorderOutlinedIcon from "@mui/icons-material/FavoriteBorderOutlined";
 const MealDetails = ({ details }) => {
   const [fav, setFav] = useState(false);
+  const { idMeal = 0 ,strMeal = "Unknown ",strMealThumb ="" ,strCategory = "Unkown",strInstructions ="No instructions" } = details;
   const favHandler = () => {
     const array = JSON.parse(localStorage.getItem("favourites"));
     if (localStorage.getItem("favourites")) {
       const check = array.filter((item) => {
-        return item === details.idMeal;
+        return item === idMeal;
       });
       if (check.length > 0) {
         const newArray = JSON.stringify(
-          array.filter((item) => item !== details.idMeal)
+          array.filter((item) => item !== idMeal)
         );
         localStorage.setItem("favourites", newArray);
         setFav(false);
       } else {
-        const newArray = JSON.stringify([...array, details.idMeal]);
+        const newArray = JSON.stringify([...array, idMeal]);
         localStorage.setItem("favourites", newArray);
         setFav(true);
       }
     } else {
-      const newArray = JSON.stringify([details.idMeal]);
+      const newArray = JSON.stringify([idMeal]);
       localStorage.setItem("favourites", newArray);
       setFav(true);
     }
@@ -31,7 +32,7 @@ const MealDetails = ({ details }) => {
       if (localStorage.getItem("favourites")) {
         const array = JSON.parse(localStorage.getItem("favourites"));
         const check = array.filter((item) => {
-          return item === details.idMeal;
+          return item === idMeal;
         });
         if (check.length > 0) {
           setFav(true);
@@ -42,19 +43,19 @@ const MealDetails = ({ details }) => {
     };
     fetchLocalStorage();
   }, [fav]);
-  if (!details.length >0) {
+  if (!details) {
     return;
   }
   return (
     <div className="px-5 sm:px-10 lg:px-20 pt-5 min-h-screen pb-20">
       <div className="text-center flex flex-col  items-center">
         <img
-          src={details.strMealThumb}
+          src={strMealThumb}
           alt=""
           className="w-2/3 sm:w-2/5 lg:w-1/3 rounded-xl"
         />
-        <h1 className="font-bold">{details.strMeal}</h1>
-        <h1 className="font-light text-sm italic">{details.strCategory}</h1>
+        <h1 className="font-bold">{strMeal}</h1>
+        <h1 className="font-light text-sm italic">{strCategory}</h1>
       </div>
       {fav ? (
         <FavoriteIcon
@@ -86,7 +87,7 @@ const MealDetails = ({ details }) => {
       </div>
       <div className="pt-5 text-center">
         <h1 className="font-bold text-lg opacity-60">Instructions</h1>
-        <p className="italic text-sm">{details.strInstructions}</p>
+        <p className="italic text-sm">{strInstructions}</p>
       </div>
     </div>
   );
